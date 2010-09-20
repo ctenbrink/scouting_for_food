@@ -3,5 +3,63 @@
   encoded_levels: BBBBB
   encoded_poly: wflbHl}biUX_lGzyAk@a@hlGyyAX
   name: A
-
-
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: akibH`ozhUa@hlG~dC?{[gkGoeBa@
+  name: B
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: yelbHtpzhUHseC|yAc@?teCqyAr@
+  name: C
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: }jibHplxhUJ`bAzxA??abAoxA?
+  name: D
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: qjibH~kxhU?oaAto@YIrbA_o@?
+  name: E
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: {ygbHthvhUIrbA~h@N?kcA{h@?
+  name: F
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: cfebHplxhUuCoiExwAYe`@~hAoIvfCse@{D
+  name: G
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBB
+  encoded_poly: _rbbHfarhUe`@~hA}JppDluBhRf`@ynIyyBiRrOxsA
+  name: H
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: celbH`jvhU?efCfzANUpdCizAr@
+  name: I
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBB
+  encoded_poly: {iibHjcrhUUpdCnbAOHoaAbVQJabAsyA`@
+  name: J
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: aggbHlhvhUHoaAbV?K~aA}UG
+  name: K
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: uclbHd|mhUlsD?EteCitDNZmfC
+  name: L
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBBBBBBBBB
+  encoded_poly: qpebHx_phUfXa@nCoBn[Fh@um@yByG?aGcl@|A`ZiwC`_Arm@wQ`kCfF~~AwvAP{AqaA
+  name: M
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBBBB
+  encoded_poly: qpebHx_phUfXa@nCoBn[Fh@um@yByG?aGcl@|A_J|_A
+  name: N
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: {clbH|{mhUEydChfC`@P~cCagCO
+  name: O
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: w|gbHdwihUP~cCrsAfBdA_wD}tAdn@
+  name: P
