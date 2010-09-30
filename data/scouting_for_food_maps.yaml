@@ -65,11 +65,11 @@
   name: P
 - !ruby/object:MapBoundary
   encoded_levels: BBBBB
-  encoded_poly: 'q~nbHhmehUdAcjG`l@`@qA`iGgj@?'
+  encoded_poly: 'q~nbHhmehUl@uhEnyAQa@thEmxAP'
   name: Q
 - !ruby/object:MapBoundary
   encoded_levels: BBBBB
-  encoded_poly: 'oqmbHhmehUdAaiG`l@QcAriGwk@?'
+  encoded_poly: 'k|nbHj`_hU?c|@byAQ?r{@cyA?'
   name: R
 - !ruby/object:MapBoundary
   encoded_levels: BBBBB
@@ -165,7 +165,7 @@
   name: OO
 - !ruby/object:MapBoundary
   encoded_levels: BBBBB
-  encoded_poly: 'iv`bHrwzgUTkcE|oAOq@~cCynAj_A'
+  encoded_poly: 'iv`bHrwzgUF{yBzoAr@a@jx@ynAj_A'
   name: PP
 - !ruby/object:MapBoundary
   encoded_levels: BBBBB
@@ -179,10 +179,6 @@
   encoded_levels: BBBBBB
   encoded_poly: 'yrtbHxajgUWvoHnd@ha@tdBbAl@etI{jC?'
   name: SS
-- !ruby/object:MapBoundary
-  encoded_levels: BBBBB
-  encoded_poly: '}ukbH|utgUp\wkDvp@dAl@rjDaoAa@'
-  name: TT
 - !ruby/object:MapBoundary
   encoded_levels: BBBBBBB
   encoded_poly: '}jfbHzttgU?ieDuzAeBl@zdBvk@b@UnaAxl@?'
