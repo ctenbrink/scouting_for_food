@@ -62,7 +62,7 @@ Your role as the Unit Leader is to organize your Unit to help carry out this pro
 </p>
 
 <ol>
-<li>Sign up for a collection area by contacting Chris Tenbrink at <a href=mailto:scout4food@gmail.com>scout4food@gmail.com</a>. See the list below for available collection areas. You may print a map of your assigned area from your web browser.  It is imperative that you stay in your assigned area.  If you’re interested in a neighbor’s area please work it out the changes with them and contact <a href=mailto:scout4food@gmail.com>Chris Tenbrink</a> to update the assigned areas.</li>
+<li>Find your assigned collection area. (Collection areas are mostly the same as last year, but may contain minor changes.) See the list below for assigned collection areas. You may print a map of your assigned area from your web browser.  It is imperative that you stay in your assigned area.  If your'e interested in a neighbor's area please work it out the changes with them and contact Chris Tenbrink at <a href=mailto:scout4food@gmail.com>scout4food@gmail.com</a> to update the assigned areas.</li>
 <li>Pickup bags at Roundtable or the North Idaho Service Center.</li>
 </ol>
 
@@ -78,11 +78,11 @@ We recommend that you make this a one-weekend event.
 </p>
 
 <p>
-All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District.  Food Banks are at different locations please contact the Food Bank in your area to coordinate your drop off time and place.  Food Bank phone #’s are as follows:
+All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District.  Ther are food banks at different locations throughout the area. Please contact the food bank in your area to coordinate your drop off time and place.  Food bank phone #'s are as follows:
 </p>
 
 <ul>
-<li>Coeur d’ Alene 664-8757</li>
+<li>Coeur d'Alene 664-8757</li>
 <li>Post Falls 773-0139</li>
 <li>Rathdrum 687-3696</li>
 <li>Kellogg 783-4901</li>
@@ -105,14 +105,21 @@ CONTENTS_HERE_DOC
 
 desc 'Generate an HTML file with links to maps.'
 task :generate_html do
-  data = File.read "./data/scouting_for_food_maps.yaml"
-  ary = YAML.load(data)
+  map_data = File.read "./data/scouting_for_food_maps.yaml"
+  map_ary = YAML.load(map_data)
 
-  File.open('html/index.html', 'w') do |outfile|
+  unit_data = File.read "./data/unit_assignments.yaml"
+  unit_hsh = YAML.load(unit_data)
+
+  html_dir = 'html'
+  html_file = 'index.html' 
+  mkdir html_dir unless File.exists? html_dir
+  File.open("#{html_dir}/#{html_file}", 'w') do |outfile|
     outfile << CONTENTS
-    ary.each do |el|
+    map_ary.each do |el|
+      unit = unit_hsh[el.name]
       outfile.puts "<tr align=\"center\">"
-      outfile.puts "<td></td>"
+      outfile.puts "<td>#{unit.nil? ? "" : unit}</td>"
       outfile.puts "<td>#{el.name} (<a href = #{el.get_url}>map</a>)</td>"
       outfile.puts "</tr>"
     end
