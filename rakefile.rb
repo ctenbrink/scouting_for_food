@@ -52,7 +52,7 @@ CONTENTS=<<CONTENTS_HERE_DOC
 <h1>SCOUTING FOR FOOD 2010</h1>
 </center>
 
-<h2>Old Missions District, November 7 and 14, 2010</h2>
+<h2>Old Missions District, November 6 and 13, 2010</h2>
 
 <p>
 It is time once again for the annual Scouting for Food Good Turn.  The Old Missions District and the Inland Northwest Council anticipate that this will result again in the largest collection of its kind in our community.</p>
@@ -69,8 +69,8 @@ Your role as the Unit Leader is to organize your Unit to help carry out this pro
 <p>
 There are two options for handing out bags:
 <ol>
-<li>To make it a two-weekend event, drop off bags on Saturday, November 7th and pick up bags on Saturday, November 14.</li>
-<li>For a one-weekend event, drop off and collect the bags on the same day on Saturday, November 14.</li>
+<li>To make it a two-weekend event, drop off bags on Saturday, November 6th and pick up bags on Saturday, November 14.</li>
+<li>For a one-weekend event, drop off and collect the bags on the same day on Saturday, November 13th.</li>
 </ol>
 
 <p>
@@ -78,18 +78,8 @@ We recommend that you make this a one-weekend event.
 </p>
 
 <p>
-All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District.  Ther are food banks at different locations throughout the area. Please contact the food bank in your area to coordinate your drop off time and place.  Food bank phone #'s are as follows:
+All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District.  There are food banks at different locations throughout the area. A list of drop-off locations will be provided on October 15th.
 </p>
-
-<ul>
-<li>Coeur d'Alene 664-8757</li>
-<li>Post Falls 773-0139</li>
-<li>Rathdrum 687-3696</li>
-<li>Kellogg 783-4901</li>
-<li>St. Maries 245-9090</li>
-<li>Athol 683-2101</li>
-<li>Spirit Lake 623-3107</li>  
-</ul>
 <p>
 Please call the North Idaho Service Center at 772-2455 with any questions you may have.
 </p>
