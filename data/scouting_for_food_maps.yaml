@@ -195,3 +195,58 @@
   encoded_levels: BBBBB
   encoded_poly: 'cdabHvrtgUb~Bi{Ayk@{rB{iBn{BxVvsA'
   name: XX
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBB 
+  encoded_poly: 'mzzbHfzkhUzR}Sbq@trAze@`@RjpColBicBJmlB'
+  name: YY
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB 
+  encoded_poly: 'yexbH~vkhUmv@a@xg@`bAbOr@c@abA'
+  name: ZZ
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBB 
+  encoded_poly: 'ghzbHxychUryA_\Hx|IkV?KyaAk`AeB_AqyF'
+  name: AAA
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB 
+  encoded_poly: '_nwbHhzmhUZmkGdzAYs@flGayA?'
+  name: BBB
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB 
+  encoded_poly: '_nwbHhzmhUl@xuBbuAblCzA}bGayA?'
+  name: CCC
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBB 
+  encoded_poly: 'oyzbHn~khUk}AgeDhWanBruANbAh}F_OlT'
+  name: DDD
+#Garwood/Twin Lakes
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBB
+  encoded_poly: '}k|bHrhchUfcA?_AqmHilGg}FeAxgFvlE|aI'
+  name: EEE
+#Spirit Lake 1
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBB
+  encoded_poly: '}hfcHvhxgU`pGnnMaB~tBknEzKgxCehH|xAafH'
+  name: FFF
+#Spirit Lake 2
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBBB
+  encoded_poly: 'qzscH`nlhUmnFal@te@ukDvxDw_@jNlxF'
+  name: GGG
+#Athol 1
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBB
+  encoded_poly: 'cmxcHfgpgU{hCvkJtrAh_IdiEad@l@ikScpCdA'
+  name: HHH
+#Athol 2
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBBB
+  encoded_poly: 'isucHvvggUdy@rqGl@fkGdpGbAzN_`Pi{IQ'
+  name: III
+#Athol 3
+- !ruby/object:MapBoundary
+  encoded_levels: BBBBB
+  encoded_poly: 'gz{cHhpggUdFaz]vvLv|ItcBvbS_zOiC'
+  name: JJJ
+
