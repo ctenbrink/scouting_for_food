@@ -1,11 +1,13 @@
 require 'rake'
+require 'rake/clean'
 require 'lib/map_boundary'
 require 'yaml'
+require 'net/http'
 
-CONTENTS=<<CONTENTS_HERE_DOC
-<html>
-<head>
-  <title>Scouting for Food 2010</title>
+CLEAN.include('html/*.html')
+CLEAN.include('html/*.png')
+
+STYLE=<<STYLE_HERE_DOC
 <style type="text/css">
   body { 
     margin-left: 10%; 
@@ -47,6 +49,14 @@ CONTENTS=<<CONTENTS_HERE_DOC
     margin-right: auto;
   }
 </style>
+STYLE_HERE_DOC
+
+CONTENTS=<<CONTENTS_HERE_DOC
+<html>
+<head>
+<title>Scouting for Food 2010</title>
+
+#{STYLE}
 
 <center>
 <h1>SCOUTING FOR FOOD 2010</h1>
@@ -62,7 +72,7 @@ Your role as the Unit Leader is to organize your Unit to help carry out this pro
 </p>
 
 <ol>
-<li>Find your assigned collection area. (Collection areas are mostly the same as last year, but may contain minor changes.) See the list below for assigned collection areas. You may print a map of your assigned area from your web browser.  It is imperative that you stay in your assigned area.  If your'e interested in a neighbor's area please work it out the changes with them and contact Chris Tenbrink at <a href=mailto:scout4food@gmail.com>scout4food@gmail.com</a> to update the assigned areas.</li>
+<li>Find your assigned collection area. (Collection areas are mostly the same as last year, but may contain minor changes.) See the list below for assigned collection areas. You may print a map of your assigned area from your web browser.  It is imperative that you stay in your assigned area.  If you are interested in a neighbor's area please work it out the changes with them and contact Chris Tenbrink at <a href=mailto:scout4food@gmail.com>scout4food@gmail.com</a> to update the assigned areas.</li>
 <li>Pickup bags at Roundtable or the North Idaho Service Center.</li>
 </ol>
 
@@ -94,7 +104,7 @@ Please call the North Idaho Service Center at 772-2455 with any questions you ma
 CONTENTS_HERE_DOC
 
 desc 'Generate an HTML file with links to maps.'
-task :generate_html do
+task :generate_simple_html do
   map_data = File.read "./data/scouting_for_food_maps.yaml"
   map_ary = YAML.load(map_data)
 
@@ -102,7 +112,7 @@ task :generate_html do
   unit_hsh = YAML.load(unit_data)
 
   html_dir = 'html'
-  html_file = 'index.html' 
+  html_file = 'simple.html' 
   mkdir html_dir unless File.exists? html_dir
   File.open("#{html_dir}/#{html_file}", 'w') do |outfile|
     outfile << CONTENTS
@@ -111,6 +121,62 @@ task :generate_html do
       outfile.puts "<tr align=\"center\">"
       outfile.puts "<td>#{unit.nil? ? "" : unit}</td>"
       outfile.puts "<td>#{el.name} (<a href = #{el.get_url}>map</a>)</td>"
+      outfile.puts "</tr>"
+    end
+    
+    outfile.puts "</table>"
+    outfile.puts "</center>"
+  end
+end
+
+desc 'Generate an HTML file with links to static pages with local maps.'
+task :generate_local_html do
+  map_data = File.read "./data/scouting_for_food_maps.yaml"
+  map_ary = YAML.load(map_data)
+
+  unit_data = File.read "./data/unit_assignments.yaml"
+  unit_hsh = YAML.load(unit_data)
+
+  html_dir = 'html'
+  mkdir html_dir unless File.exists? html_dir  
+
+  map_ary.each do |el|
+    print "Downloading map for Area #{el.name}..."
+    Net::HTTP.start(el.get_domain) do |http|
+      response = http.get("#{el.get_path}#{el.get_query}")
+      File.open("#{html_dir}/#{el.name}.png", "wb") do |outfile|
+        outfile.write(response.body)
+      end
+    end
+    print "done\n"
+
+    print "Writing html for Area #{el.name}..."
+    File.open("#{html_dir}/#{el.name}.html", 'w') do |outfile|
+      unit = unit_hsh[el.name]
+      outfile.puts "<html>"
+      outfile.puts "<head>"
+      outfile.puts "<title>Scouting for Food 2010 - Area #{el.name}</title>"
+      outfile.puts "#{STYLE}"
+      outfile.puts "<h2>Area #{el.name}</h2>"
+      unless( unit.nil? ) 
+        outfile.puts "<h2>#{unit}</h2>"
+      end
+      outfile.puts "<p>"
+      outfile.puts "<img src=\"#{el.name}.png\" alt=\"Area #{el.name} Map\" />"
+      outfile.puts "</p>"
+    end
+    print "done\n"
+  end
+
+
+  html_file = 'local.html' 
+  File.open("#{html_dir}/#{html_file}", 'w') do |outfile|
+    outfile << CONTENTS
+    map_ary.each do |el|
+      unit = unit_hsh[el.name]
+      outfile.puts "<tr align=\"center\">"
+      outfile.puts "<td>#{unit.nil? ? "" : unit}</td>"
+      outfile.puts "<td>#{el.name} (<a href = #{el.name}.html>map</a>)</td>"
       outfile.puts "</tr>"
     end
     
