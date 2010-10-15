@@ -79,7 +79,7 @@ Your role as the Unit Leader is to organize your Unit to help carry out this pro
 <p>
 There are two options for handing out bags:
 <ol>
-<li>To make it a two-weekend event, drop off bags on Saturday, November 6th and pick up bags on Saturday, November 14.</li>
+<li>To make it a two-weekend event, drop off bags on Saturday, November 6th and pick up bags on Saturday, November 13.</li>
 <li>For a one-weekend event, drop off and collect the bags on the same day on Saturday, November 13th.</li>
 </ol>
 
