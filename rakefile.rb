@@ -88,8 +88,17 @@ We recommend that you make this a one-weekend event.
 </p>
 
 <p>
-All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District.  There are food banks at different locations throughout the area. A list of drop-off locations will be provided on October 15th.
+All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District. Please drop off the food your unit collects at one of the food banks listed below. Food banks are expecting deliveries between 10 AM and 3 PM on Saturday, November 13. 
 </p>
+<ul>
+<li>Coeur d'Alene, 664-8757</li>
+<li>Post Falls, 773-0139</li>
+<li>Rathdrum, 687-3696</li>
+<li>Kellogg, 783-4901</li>
+<li>St. Maries, 245-9090</li>
+<li>Athol, 683-2101</li>
+<li>Spirit Lake, 623-3107</li>
+</ul>
 <p>
 Please call the North Idaho Service Center at 772-2455 with any questions you may have.
 </p>
