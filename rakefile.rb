@@ -3,9 +3,14 @@ require 'rake/clean'
 require './lib/map_boundary'
 require 'yaml'
 require 'net/http'
+require 'prawn'
 
-CLEAN.include('html/*.html')
-CLEAN.include('html/*.png')
+$html_dir = 'html'
+$pdf_dir = 'pdf'
+CLEAN.include("#{$html_dir}/*.html")
+CLEAN.include("#{$html_dir}/*.png")
+CLEAN.include("#{$pdf_dir}/*.png")
+CLEAN.include("#{$pdf_dir}/*.pdf")
 
 STYLE=<<STYLE_HERE_DOC
 <style type="text/css">
@@ -138,10 +143,9 @@ task :generate_simple_html do
   unit_data = File.read "./data/unit_assignments.yaml"
   unit_hsh = YAML.load(unit_data)
 
-  html_dir = 'html'
   html_file = 'simple.html' 
-  mkdir html_dir unless File.exists? html_dir
-  File.open("#{html_dir}/#{html_file}", 'w') do |outfile|
+  mkdir $html_dir unless File.exists? $html_dir
+  File.open("#{$html_dir}/#{html_file}", 'w') do |outfile|
     outfile << CONTENTS
     map_ary.each do |el|
       unit = unit_hsh[el.name]
@@ -156,6 +160,19 @@ task :generate_simple_html do
   end
 end
 
+def download_maps(map_ary, dest_dir)
+  map_ary.each do |el|
+    print "Downloading map for Area #{el.name}..."
+    Net::HTTP.start(el.get_domain) do |http|
+      response = http.get("#{el.get_path}#{el.get_query}")
+      File.open("#{dest_dir}/#{el.name}.png", "wb") do |outfile|
+        outfile.write(response.body)
+      end
+    end
+    print "done\n"
+  end
+end
+
 desc 'Generate an HTML file with links to static pages with local maps.'
 task :generate_local_html do
   map_data = File.read "./data/scouting_for_food_maps.yaml"
@@ -164,25 +181,17 @@ task :generate_local_html do
   unit_data = File.read "./data/unit_assignments.yaml"
   unit_hsh = YAML.load(unit_data)
 
-  html_dir = 'html'
-  mkdir html_dir unless File.exists? html_dir  
+  mkdir $html_dir unless File.exists? $html_dir  
+
+  download_maps(map_ary, $html_dir)
 
   map_ary.each do |el|
-    print "Downloading map for Area #{el.name}..."
-    Net::HTTP.start(el.get_domain) do |http|
-      response = http.get("#{el.get_path}#{el.get_query}")
-      File.open("#{html_dir}/#{el.name}.png", "wb") do |outfile|
-        outfile.write(response.body)
-      end
-    end
-    print "done\n"
-
     print "Writing html for Area #{el.name}..."
-    File.open("#{html_dir}/#{el.name}.html", 'w') do |outfile|
+    File.open("#{$html_dir}/#{el.name}.html", 'w') do |outfile|
       unit = unit_hsh[el.name]
       outfile.puts "<html>"
       outfile.puts "<head>"
-      outfile.puts "<title>Scouting for Food 2010 - Area #{el.name}</title>"
+      outfile.puts "<title>Scouting for Food 2011 - Area #{el.name}</title>"
       outfile.puts "#{STYLE}"
       outfile.puts "<h2>Area #{el.name}</h2>"
       unless( unit.nil? ) 
@@ -197,7 +206,7 @@ task :generate_local_html do
 
 
   html_file = 'local.html' 
-  File.open("#{html_dir}/#{html_file}", 'w') do |outfile|
+  File.open("#{$html_dir}/#{html_file}", 'w') do |outfile|
     outfile << CONTENTS
     map_ary.each do |el|
       unit = unit_hsh[el.name]
@@ -210,4 +219,67 @@ task :generate_local_html do
     outfile.puts "</table>"
     outfile.puts "</center>"
   end
+end
+
+desc 'Generate a pdf file containing maps for each unit.'
+task :generate_local_pdf do
+  map_data = File.read "./data/scouting_for_food_maps.yaml"
+  map_ary = YAML.load(map_data)
+
+  unit_data = File.read "./data/unit_assignments.yaml"
+  unit_hsh = YAML.load(unit_data)
+
+  mkdir $pdf_dir unless File.exists? $pdf_dir  
+
+  download_maps(map_ary, $pdf_dir)
+
+  Prawn::Document.generate "./#{$pdf_dir}/ScoutingForFoodMapBook.pdf" do
+    move_down 80
+    font_size 28 
+    text "Old Missions District", :align=>:center, :style=>:bold_italic
+    text "Scouting For Food Map Book", :align=>:center, :style=>:bold_italic
+    text "2011", :align=>:center, :style=>:bold_italic
+    start_pg_number = 4
+    cur_pg = start_pg_number
+    pgs = []
+    map_ary.each do |el|
+      pgs << {:pg_title => "Area #{el.name} - #{unit_hsh[el.name]}", 
+              :pg_image => "./#{$pdf_dir}/#{el.name}.png",
+              :pg_number => cur_pg
+             }
+      cur_pg += 1
+    end
+      
+    start_new_page
+    font_size 18
+    text "Table of Contents", :align=>:center, :font_size=>14, :style=>:bold_italic
+    move_down 40
+    font_size 12
+    num_chars = 75
+    font "Courier" do
+      pgs.each do |el|
+        num_dots = num_chars - (el[:pg_title].length + el[:pg_number].to_s.length)
+        dots = "."*num_dots 
+        text "#{el[:pg_title]}#{dots}#{el[:pg_number]}", :kerning => false
+      end
+    end
+
+    font_size 18
+    pgs.each do |el|
+      start_new_page
+      outline.page :title => el[:pg_title], :destination => el[:pg_number]
+      text el[:pg_title]
+      move_down 20
+      image el[:pg_image], :width=>480, :position=>:center
+    end
+
+    options = { :at => [bounds.right - 150, 0],
+                :width => 150,
+                :align => :right,
+                :page_filter => lambda{|pg| pg >= start_pg_number},
+                :start_count_at => start_pg_number
+              }
+    number_pages "<page>", options
+  end
+ 
 end
