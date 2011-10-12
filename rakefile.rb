@@ -1,6 +1,6 @@
 require 'rake'
 require 'rake/clean'
-require 'lib/map_boundary'
+require './lib/map_boundary'
 require 'yaml'
 require 'net/http'
 
@@ -54,33 +54,34 @@ STYLE_HERE_DOC
 CONTENTS=<<CONTENTS_HERE_DOC
 <html>
 <head>
-<title>Scouting for Food 2010</title>
+<title>Old Missions Scouting for Food 2011</title>
 
 #{STYLE}
 
 <center>
-<h1>SCOUTING FOR FOOD 2010</h1>
+<h1>SCOUTING FOR FOOD 2011</h1>
 </center>
 
-<h2>Old Missions District, November 6 and 13, 2010</h2>
+<h2>Old Missions District, November 5 and 12, 2011</h2>
 
 <p>
 It is time once again for the annual Scouting for Food Good Turn.  The Old Missions District and the Inland Northwest Council anticipate that this will result again in the largest collection of its kind in our community.</p>
 
 <p>
-Your role as the Unit Leader is to organize your Unit to help carry out this project.  There are a couple of things you will need to do to get ready:
+Your role as the Unit Leader is to organize your unit to help carry out this project.  There are a couple of things you will need to do to get ready:
 </p>
 
 <ol>
-<li>Find your assigned collection area. (Collection areas are mostly the same as last year, but may contain minor changes.) See the list below for assigned collection areas. You may print a map of your assigned area from your web browser.  It is imperative that you stay in your assigned area.  If you are interested in a neighbor's area please work it out the changes with them and contact Chris Tenbrink at <a href=mailto:scout4food@gmail.com>scout4food@gmail.com</a> to update the assigned areas.</li>
+<li>Register your unit's participation. The council would like to keep better track of how many units are planning to participate in this event. You can register your unit on <a href=http://www.nwscouts.org/form/formjump.asp?bidx=0&surveyID=23901&OrgKey=778>www.nwscouts.org</a>. Units who submit a roster of participants will recieve a patch for each Scout.</li>
+<li>Find your assigned collection area. (Collection areas are mostly the same as last year, but may contain minor changes.) See the list below for assigned collection areas. You may print a map of your assigned area from your web browser.  It is imperative that you stay in your assigned area.  If you are interested in a neighbor's area please work out the changes with them and contact Chris Tenbrink at <a href=mailto:scout4food@gmail.com>scout4food@gmail.com</a> to update the assigned areas.</li>
 <li>Pickup bags at Roundtable or the North Idaho Service Center.</li>
 </ol>
 
 <p>
 There are two options for handing out bags:
 <ol>
-<li>To make it a two-weekend event, drop off bags on Saturday, November 6th and pick up bags on Saturday, November 13.</li>
-<li>For a one-weekend event, drop off and collect the bags on the same day on Saturday, November 13th.</li>
+<li>To make it a two-weekend event, drop off bags on Saturday, November 5th and pick up bags on Saturday, November 12.</li>
+<li>For a one-weekend event, drop off and collect the bags on the same day on Saturday, November 12th.</li>
 </ol>
 
 <p>
@@ -88,8 +89,13 @@ We recommend that you make this a one-weekend event.
 </p>
 
 <p>
-All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District. Please drop off the food your unit collects at one of the food banks listed below. Food banks are expecting deliveries between 10 AM and 3 PM on Saturday, November 13. 
+All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District. Please drop off the food your unit collects at one of the food banks listed below. Food banks are expecting deliveries between 10 AM and 3 PM on Saturday, November 12. 
 </p>
+<p>
+Please call the North Idaho Service Center at 772-2455 with any questions you may have.
+</p>
+
+<!--
 <ul>
 <li>Coeur d'Alene, 664-8757</li>
 <li>Post Falls, 773-0139</li>
@@ -99,11 +105,23 @@ All Scouts and registered Unit Leaders should be in uniform.  This makes us easy
 <li>Athol, 683-2101</li>
 <li>Spirit Lake, 623-3107</li>
 </ul>
+-->
+<center>
+<table cellspacing="1" cellpadding="8">
+  <tbody>
+    <th colspan="3"><p align="center">Drop-off Locations</p></th></tr>
+    <tr><td>Coeur d'Alene</td><td>Community Action Partnership Food Bank</td><td>4942 Industrial Ave. East, Coeur d'Alene</td></tr>
+    <tr><td>Post Falls</td><td>Post Falls Food Bank</td><td>415 E. 3rd St., Post Falls</td></tr>
+    <tr><td>Rathdrum</td><td>Rathdrum Food Bank</td><td>827 Main St., Rathdrum</td></tr>
+    <tr><td>Kellogg</td><td>Shoshone County Food Bank</td><td>311 Main St., Kellogg</td></tr>
+    <tr><td>St. Maries</td><td>Community Action Partnership Food Bank</td><td>416 Main St., St. Maries</td></tr>
+    <tr><td>Spirit Lake</td><td>Spirit Lake Food Bank</td><td>32154 4th St., Spirit Lake</td></tr>
+    <tr><td>Pinehurst</td><td>Real Life Ministries Food Room</td><td>S. 10 Division St., Pinehurst</td></tr>
+  </tbody>
+</table>
+</center>
 <p>
-Please call the North Idaho Service Center at 772-2455 with any questions you may have.
-</p>
-
-
+<p>
 <center>
 <table cellspacing="1" cellpadding="8">
 <tr align="center">

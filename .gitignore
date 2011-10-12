@@ -1,3 +1,5 @@
 *~
 *.swp
 html/
+pdf/
+.DS_Store
