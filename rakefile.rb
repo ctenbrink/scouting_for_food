@@ -59,15 +59,15 @@ STYLE_HERE_DOC
 CONTENTS=<<CONTENTS_HERE_DOC
 <html>
 <head>
-<title>Old Missions Scouting for Food 2011</title>
+<title>Old Missions Scouting for Food 2013</title>
 
 #{STYLE}
 
 <center>
-<h1>SCOUTING FOR FOOD 2011</h1>
+<h1>SCOUTING FOR FOOD 2013</h1>
 </center>
 
-<h2>Old Missions District, November 5 and 12, 2011</h2>
+<h2>Old Missions District, November 9, 2013</h2>
 
 <p>
 It is time once again for the annual Scouting for Food Good Turn.  The Old Missions District and the Inland Northwest Council anticipate that this will result again in the largest collection of its kind in our community.</p>
@@ -83,18 +83,7 @@ Your role as the Unit Leader is to organize your unit to help carry out this pro
 </ol>
 
 <p>
-There are two options for handing out bags:
-<ol>
-<li>To make it a two-weekend event, drop off bags on Saturday, November 5th and pick up bags on Saturday, November 12.</li>
-<li>For a one-weekend event, drop off and collect the bags on the same day on Saturday, November 12th.</li>
-</ol>
-
-<p>
-We recommend that you make this a one-weekend event.
-</p>
-
-<p>
-All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our District. Please drop off the food your unit collects at one of the food banks listed below. Food banks are expecting deliveries between 10 AM and 3 PM on Saturday, November 12. 
+All Scouts and registered Unit Leaders should be in uniform.  This makes us easy to identify and also promotes Scouting to the community.  With your help, we can make a difference for the people in need in our community.  We can make the holidays special for many children and adults throughout our district. Please drop off the food your unit collects at one of the food banks listed below. Food banks are expecting deliveries between 10 AM and 3 PM on Saturday, November 9. 
 </p>
 <p>
 Please call the North Idaho Service Center at 772-2455 with any questions you may have.
@@ -191,7 +180,7 @@ task :generate_local_html do
       unit = unit_hsh[el.name]
       outfile.puts "<html>"
       outfile.puts "<head>"
-      outfile.puts "<title>Scouting for Food 2011 - Area #{el.name}</title>"
+      outfile.puts "<title>Scouting for Food 2013 - Area #{el.name}</title>"
       outfile.puts "#{STYLE}"
       outfile.puts "<h2>Area #{el.name}</h2>"
       unless( unit.nil? ) 
@@ -238,7 +227,7 @@ task :generate_local_pdf do
     font_size 28 
     text "Old Missions District", :align=>:center, :style=>:bold_italic
     text "Scouting For Food Map Book", :align=>:center, :style=>:bold_italic
-    text "2011", :align=>:center, :style=>:bold_italic
+    text "2013", :align=>:center, :style=>:bold_italic
     start_pg_number = 4
     cur_pg = start_pg_number
     pgs = []
